@@ -1,0 +1,6 @@
+/.idea/
+/client/**/node_modules/
+/client/**/dist/
+/**/target/
+/**/*.log
+*.iml
