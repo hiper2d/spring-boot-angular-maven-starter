@@ -29,7 +29,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 > Access UI App at [http://localhost:9001](http://localhost:9001)
-##### Production mode
+##### Development mode
 ```bash
 # navigate to server directory and use command
 mvn spring-boot:run
