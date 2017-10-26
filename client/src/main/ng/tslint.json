@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "no-unused-variable": true,
+    "curly": true,
+    "no-console": [
+      true,
+      "log",
+      "error",
+      "debug",
+      "info"
+    ],
+    "no-debugger": true,
+    "no-duplicate-variable": true,
+    "no-eval": true,
+    "no-invalid-this": true,
+    "no-shadowed-variable": true,
+    "no-unsafe-finally": true,
+    "no-var-keyword": true,
+    "triple-equals": [
+      true,
+      "allow-null-check",
+      "allow-undefined-check"
+    ],
+    "semicolon": [
+      true,
+      "always",
+      "ignore-interfaces"
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
+    ]
+  }
+}

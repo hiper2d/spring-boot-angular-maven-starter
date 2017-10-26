@@ -37,6 +37,23 @@
                 <executions>
                     <execution>
                         <id>exec-npm-install</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <executable>${npm.command}</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
+                            <workingDirectory>${basedir}/src/main/ng</workingDirectory>
+                            <environmentVariables>
+                                <NODE_ENV>${node.env}</NODE_ENV>
+                            </environmentVariables>
+                        </configuration>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>exec-npm-prod</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>exec</goal>
@@ -45,7 +62,7 @@
                             <executable>${npm.command}</executable>
                             <arguments>
                                 <argument>run</argument>
-                                <argument>build</argument>
+                                <argument>prod</argument>
                             </arguments>
                             <workingDirectory>${basedir}/src/main/ng</workingDirectory>
                             <environmentVariables>

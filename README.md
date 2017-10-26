@@ -6,4 +6,30 @@ An example of Spring Boot and Angular 4 integration with the help of Maven, Webp
 [![dependencies Status](https://david-dm.org/hiper2d/spring-boot-angular-maven-starter/status.svg?path=client/src/main/ng)](https://david-dm.org/hiper2d/spring-boot-angular-maven-starter?path=client/src/main/ng)
 [![devDependencies Status](https://david-dm.org/hiper2d/spring-boot-angular-maven-starter/dev-status.svg?path=client/src/main/ng)](https://david-dm.org/hiper2d/spring-boot-angular-maven-starter?path=client/src/main/ng&type=dev)
 
-Consists of [server](./server/) and [client](./client/) modules which are run separately in development mode and can be built in a single war deployable archive in production mode.
+Consists of [server](./server/) and [client](./client/) modules which can be run separately in development mode and can be built in a single war deployable/runnable war-archive in production mode.
+
+### Build
+##### Production mode
+```bash
+# build both server and client
+mvn clean install
+```
+##### Development mode
+```bash
+# to be defined later
+```
+### Run
+##### Production mode
+```bash
+# navigate to server directory and use the following command
+mvn spring-boot:run
+```
+> Access UI App at [http://localhost:9001](http://localhost:9001)
+##### Production mode
+```bash
+# navigate to server directory and use command
+mvn spring-boot:run
+# navigate to client/src/main/ng directory and use the following command
+npm start
+```
+> Access UI App at [http://localhost:9002](http://localhost:9002)

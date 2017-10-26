@@ -3,4 +3,4 @@
 /client/**/dist/
 /**/target/
 /**/*.log
-*.iml
+/**/*.iml

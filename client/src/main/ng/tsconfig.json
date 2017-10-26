@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
+    "declaration": false,
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -9,22 +10,35 @@
     "removeComments": false,
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
     "lib": [
-      "dom",
-      "es6"
+      "es6",
+      "dom"
     ],
+    "outDir": "./dist/",
     "typeRoots": [
-      "node_modules/@types"
-    ],
-    "types": [
-      "core-js",
-      "node"
-    ],
-    "exclude": [
-      "node_modules",
-      "dist"
+      "./node_modules/@types/"
     ]
   },
   "compileOnSave": false,
-  "buildOnSave": false
+  "buildOnSave": false,
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "dist/*",
+    "dist-serve/*",
+    "node/*",
+    "**/*.spec.ts"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true,
+    "useCache": true
+  },
+  "angularCompilerOptions": {
+    "genDir": ".",
+    "skipMetadataEmit" : true
+  }
 }
