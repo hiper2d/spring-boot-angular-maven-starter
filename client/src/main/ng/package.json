@@ -1,7 +1,7 @@
 {
-  "name": "angular-client",
+  "name": "spring-boot-angular-maven-starter",
   "version": "0.1.0-SNAPSHOT",
-  "description": "angular-client",
+  "description": "spring-boot-angular-maven-starter",
   "author": "hiper2d",
   "license": "MIT",
   "dependencies": {

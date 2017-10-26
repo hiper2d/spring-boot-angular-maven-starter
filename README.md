@@ -1,4 +1,8 @@
-# spring-boot-angular-maven-starter
+spring-boot-angular-maven-starter
+=============
+
+[![TravisCI Build](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter.svg)](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter)
+
 An example of Spring Boot and Angular 4 integration with the help of Maven, Webpack and Kotlin.
 
 ##### Client npm dependencies status:
