@@ -16,11 +16,12 @@ Consists of [server](./server/) and [client](./client/) modules which can be run
 ##### Production mode
 ```bash
 # build both server and client
-mvn clean install
+mvn clean install -Pprod
 ```
 ##### Development mode
 ```bash
-# to be defined later
+# build the server module without the client jar dependency
+mvn clean install
 ```
 ### Run
 ##### Production mode
