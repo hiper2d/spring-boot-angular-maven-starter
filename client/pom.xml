@@ -18,63 +18,6 @@
         <npm.command>npm</npm.command>
     </properties>
 
-    <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/ng/dist</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <targetPath>META-INF/resources</targetPath>
-            </resource>
-        </resources>
-
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <id>exec-npm-install</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <executable>${npm.command}</executable>
-                            <arguments>
-                                <argument>install</argument>
-                            </arguments>
-                            <workingDirectory>${basedir}/src/main/ng</workingDirectory>
-                            <environmentVariables>
-                                <NODE_ENV>${node.env}</NODE_ENV>
-                            </environmentVariables>
-                        </configuration>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>exec-npm-prod</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>${npm.command}</executable>
-                            <arguments>
-                                <argument>run</argument>
-                                <argument>prod</argument>
-                            </arguments>
-                            <workingDirectory>${basedir}/src/main/ng</workingDirectory>
-                            <environmentVariables>
-                                <NODE_ENV>${node.env}</NODE_ENV>
-                            </environmentVariables>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
     <profiles>
         <profile>
             <id>windows-profile</id>
@@ -86,6 +29,66 @@
             <properties>
                 <npm.command>npm.cmd</npm.command>
             </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>${basedir}/src/main/ng/dist</directory>
+                        <includes>
+                            <include>**</include>
+                        </includes>
+                        <targetPath>META-INF/resources</targetPath>
+                    </resource>
+                </resources>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <executions>
+                            <execution>
+                                <id>exec-npm-install</id>
+                                <phase>generate-sources</phase>
+                                <configuration>
+                                    <executable>${npm.command}</executable>
+                                    <arguments>
+                                        <argument>install</argument>
+                                    </arguments>
+                                    <workingDirectory>${basedir}/src/main/ng</workingDirectory>
+                                    <environmentVariables>
+                                        <NODE_ENV>${node.env}</NODE_ENV>
+                                    </environmentVariables>
+                                </configuration>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>exec-npm-prod</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>${npm.command}</executable>
+                                    <arguments>
+                                        <argument>run</argument>
+                                        <argument>prod</argument>
+                                    </arguments>
+                                    <workingDirectory>${basedir}/src/main/ng</workingDirectory>
+                                    <environmentVariables>
+                                        <NODE_ENV>${node.env}</NODE_ENV>
+                                    </environmentVariables>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
