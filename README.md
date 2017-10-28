@@ -11,7 +11,9 @@ An example of Spring Boot and Angular 4 integration with the help of Maven, Webp
 [![devDependencies Status](https://david-dm.org/hiper2d/spring-boot-angular-maven-starter/dev-status.svg?path=client/src/main/ng)](https://david-dm.org/hiper2d/spring-boot-angular-maven-starter?path=client/src/main/ng&type=dev)
 
 Consists of [server](./server/) and [client](./client/) modules.
+
 In production mode, they both are compiled and built into a single WAR archive which can be deployed to a web application server or run directly as a standalone Java application on the 9001 port.
+
 In development mode, you work with both modules separately. The server is built and run with the help of Maven from the 'server' directory while the client is operated via npm from the 'client/src/main/ng' directory.
 
 ### Build
