@@ -12,9 +12,9 @@ An example of Spring Boot and Angular 4 integration with the help of Maven, Webp
 
 Consists of [server](./server/) and [client](./client/) modules.
 
-In production mode, they both are compiled and built into a single WAR archive which can be deployed to a web application server or run directly as a standalone Java application on the 9001 port.
+In production mode, they both are compiled and built into a single WAR archive which can be deployed to a web application server or run directly as a standalone Java application.
 
-In development mode, you work with both modules separately. The server is built and run with the help of Maven from the 'server' directory while the client is operated via npm from the 'client/src/main/ng' directory.
+In development mode, you work with both modules separately. The server is built and run with the help of Maven from the 'server' directory. The client is operated via npm from the 'client/src/main/ng' directory.
 
 ### Build
 ##### Production mode
