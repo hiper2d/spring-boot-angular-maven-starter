@@ -22,8 +22,10 @@ mvn clean install -Pprod
 ```
 ##### Development mode
 ```bash
-# build the server module without the client jar dependency (can be run from the root or from the 'server' directories)
+# build the server module without the client jar dependency 
+# (can be run from the root or from the 'server' directories)
 mvn clean install
+
 # install client's npm dependencies (it's necessary for the first build only)
 # navigate to the 'client/src/main/ng' directory and run the following command
 npm install
@@ -39,6 +41,7 @@ mvn spring-boot:run
 ```bash
 # navigate to the 'server' directory and run the following command
 mvn spring-boot:run
+
 # navigate to the 'client/src/main/ng' directory and run the following command
 npm start
 ```
