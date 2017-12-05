@@ -5,8 +5,8 @@ import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: 'home', component: HomeComponent},
-    {path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
+    {path: 'home', component: HomeComponent, pathMatch: 'full'},
+    {path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule', pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent},
 ];
 

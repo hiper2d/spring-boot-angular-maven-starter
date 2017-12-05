@@ -1,12 +1,13 @@
 "use strict";
 
+
 const fs = require('fs');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const helpers = require('./helpers');
 
-const AotPlugin = require('@ngtools/webpack').AotPlugin;
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackOnBuildPlugin = require('on-build-webpack');
@@ -64,9 +65,10 @@ if (isAot) {
     config.entry['app'] = './src/main-aot.ts';
 
     config.plugins = [
-        new AotPlugin({
+        new AngularCompilerPlugin({
             tsConfigPath: './tsconfig.json',
-            entryModule: helpers.root('src/app/app.module.ts#AppModule')
+            entryModule: helpers.root('src/app/app.module.ts#AppModule'),
+            sourceMap: true
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
