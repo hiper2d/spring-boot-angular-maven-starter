@@ -1,8 +1,9 @@
 # compiled output
-/dist
+/dist/
 
 # dependencies
-/node_modules
+/node/
+/node_modules/
 
 # e2e
 /e2e/*.js

@@ -15,22 +15,50 @@
     </parent>
 
     <properties>
-        <npm.command>npm</npm.command>
+        <frontend-maven-plugin-version>1.6</frontend-maven-plugin-version>
+        <node-version>v8.6.0</node-version>
+        <yarn-version>v1.3.2</yarn-version>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>windows-profile</id>
-            <activation>
-                <os>
-                    <family>Windows</family>
-                </os>
-            </activation>
-            <properties>
-                <npm.command>npm.cmd</npm.command>
-            </properties>
-        </profile>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>${frontend-maven-plugin-version}</version>
+                    <configuration>
+                        <workingDirectory>src/main/ng</workingDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>install node and npm</id>
+                            <goals>
+                                <goal>install-node-and-yarn</goal>
+                            </goals>
+                            <phase>generate-resources</phase>
+                            <configuration>
+                                <nodeVersion>${node-version}</nodeVersion>
+                                <yarnVersion>${yarn-version}</yarnVersion>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>yarn install</id>
+                            <goals>
+                                <goal>yarn</goal>
+                            </goals>
+                            <phase>generate-resources</phase>
+                            <configuration>
+                                <arguments>install</arguments>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
+    <profiles>
         <profile>
             <id>prod</id>
             <build>
@@ -46,43 +74,17 @@
 
                 <plugins>
                     <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.6.0</version>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>exec-npm-install</id>
-                                <phase>generate-sources</phase>
-                                <configuration>
-                                    <executable>${npm.command}</executable>
-                                    <arguments>
-                                        <argument>install</argument>
-                                    </arguments>
-                                    <workingDirectory>${basedir}/src/main/ng</workingDirectory>
-                                    <environmentVariables>
-                                        <NODE_ENV>${node.env}</NODE_ENV>
-                                    </environmentVariables>
-                                </configuration>
+                                <id>yarn build</id>
                                 <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>exec-npm-prod</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>exec</goal>
+                                    <goal>yarn</goal>
                                 </goals>
                                 <configuration>
-                                    <executable>${npm.command}</executable>
-                                    <arguments>
-                                        <argument>run</argument>
-                                        <argument>prod</argument>
-                                    </arguments>
-                                    <workingDirectory>${basedir}/src/main/ng</workingDirectory>
-                                    <environmentVariables>
-                                        <NODE_ENV>${node.env}</NODE_ENV>
-                                    </environmentVariables>
+                                    <arguments>run</arguments>
+                                    <arguments>build</arguments>
                                 </configuration>
                             </execution>
                         </executions>
