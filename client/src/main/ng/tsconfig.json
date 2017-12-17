@@ -1,44 +1,19 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "skipLibCheck": true,
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "outDir": "./dist/",
+    "target": "es5",
     "typeRoots": [
-      "./node_modules/@types/"
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
     ]
-  },
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules/*",
-    "dist/*",
-    "dist-serve/*",
-    "node/*",
-    "**/*.spec.ts"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "forkChecker": true,
-    "useWebpackText": true,
-    "useCache": true
-  },
-  "angularCompilerOptions": {
-    "genDir": ".",
-    "skipMetadataEmit" : true
   }
 }

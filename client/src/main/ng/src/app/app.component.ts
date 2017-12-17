@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import "../assets/reset.css";
 
 @Component({
-    selector: 'app',
+    selector: 'app-root',
     template: `
         <nav class="nav">
             <a class="nav__link" routerLink="/home" routerLinkActive="_active">Home</a>

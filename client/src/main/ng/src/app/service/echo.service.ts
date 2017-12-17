@@ -8,6 +8,6 @@ export class EchoService {
     }
 
     echo(): Observable<string> {
-        return this.http.get("http://localhost:9001/api/echo", {responseType: 'text'});
+        return this.http.get("/api/echo", {responseType: 'text'});
     }
 }
