@@ -3,7 +3,7 @@ spring-boot-angular-maven-starter
 
 [![TravisCI Build](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter.svg)](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter)
 
-An example of Spring Boot and Angular 4 integration with the help of Maven, Webpack and Kotlin.
+An example of Spring Boot 2 and Angular 5 integration with the help of Kotlin, Maven and Yarn.
 
 ##### Client npm dependencies status:
 
@@ -14,7 +14,7 @@ Consists of [server](./server/) and [client](./client/) modules.
 
 In production mode, they both are compiled and built into a single WAR archive which can be deployed to a web application server or run directly as a standalone Java application.
 
-In development mode, you work with both modules separately. The server is built and run with the help of Maven from the 'server' directory. The client is operated via npm from the 'client/src/main/ng' directory.
+In development mode, you work with both modules separately. The server is built and run with the help of Maven from the 'server' directory. The client is operated via Yarn from the 'client/src/main/ng' directory.
 
 ### Build
 ##### Production mode
@@ -30,7 +30,7 @@ mvn clean install
 
 # install client's npm dependencies (it's necessary for the first build only)
 # navigate to the 'client/src/main/ng' directory and run the following command
-npm install
+yarn install
 ```
 ### Run
 ##### Production mode
@@ -45,6 +45,6 @@ mvn spring-boot:run
 mvn spring-boot:run
 
 # navigate to the 'client/src/main/ng' directory and run the following command
-npm start
+yarn start
 ```
 > Access UI App at [http://localhost:9002](http://localhost:9002)
