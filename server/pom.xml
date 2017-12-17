@@ -20,6 +20,7 @@
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <maven.war.plugin.version>3.0.0</maven.war.plugin.version>
+        <spring-boot-version>2.0.0.M7</spring-boot-version>
         <start-class>com.hiper2d.Application</start-class>
     </properties>
 
@@ -28,12 +29,20 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.5.8.RELEASE</version>
+                <version>${spring-boot-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -58,6 +67,12 @@
             <artifactId>kotlin-stdlib-jre8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-reflect</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -66,11 +81,9 @@
 
         <plugins>
             <plugin>
-                <!-- See more about Kotlin + Maven configuration here:   -->
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <version>${kotlin.version}</version>
-
                 <executions>
                     <execution>
                         <id>compile</id>
@@ -79,7 +92,6 @@
                             <goal>compile</goal>
                         </goals>
                     </execution>
-
                     <execution>
                         <id>test-compile</id>
                         <phase>test-compile</phase>
@@ -99,7 +111,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.hiper2d.Application</mainClass>
+                    <mainClass>${start-class}</mainClass>
                     <classifier>exec</classifier>
                 </configuration>
                 <executions>
