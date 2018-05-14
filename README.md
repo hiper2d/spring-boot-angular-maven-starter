@@ -3,7 +3,7 @@ spring-boot-angular-maven-starter
 
 [![TravisCI Build](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter.svg)](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter)
 
-An example of Spring Boot 2 and Angular 5 integration with the help of Kotlin, Maven and Yarn.
+An example of Spring Boot 2 and Angular 6 integration with the help of Kotlin, Maven and Yarn.
 
 ##### Client npm dependencies status:
 
