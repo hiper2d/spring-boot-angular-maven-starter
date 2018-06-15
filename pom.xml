@@ -13,23 +13,4 @@
         <module>client</module>
         <module>server</module>
     </modules>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <node.env>development</node.env>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>prod</id>
-            <properties>
-                <node.env>production</node.env>
-            </properties>
-        </profile>
-    </profiles>
 </project>
