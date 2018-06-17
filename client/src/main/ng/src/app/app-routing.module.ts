@@ -1,12 +1,10 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
-import {HomeComponent} from "./home/home.component";
 import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not-found.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
-    {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: 'home', component: HomeComponent, pathMatch: 'full'},
-    {path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule', pathMatch: 'full'},
+    {path: 'login', component: LoginComponent, pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent},
 ];
 

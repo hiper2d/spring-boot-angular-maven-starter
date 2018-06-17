@@ -1,13 +1,18 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {AbstractService} from "./abstract-service";
 
-@Injectable()
-export class EchoService {
-    constructor(private http: HttpClient){
-    }
+@Injectable({
+  providedIn: 'root',
+})
+export class EchoService extends AbstractService {
 
-    echo(): Observable<string> {
-        return this.http.get("/api/echo", {responseType: 'text'});
-    }
+  constructor(http: HttpClient) {
+    super(http)
+  }
+
+  echo(): Observable<string> {
+    return this.getText("/api/echo")
+  }
 }

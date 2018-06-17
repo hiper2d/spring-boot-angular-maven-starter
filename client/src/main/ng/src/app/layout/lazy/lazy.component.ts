@@ -5,5 +5,4 @@ import {Component} from "@angular/core";
     template: `<div>I'm Lazy</div>`
 })
 export class LazyComponent {
-
 }

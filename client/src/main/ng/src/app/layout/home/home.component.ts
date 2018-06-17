@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {EchoService} from "../service/echo.service";
+import {EchoService} from "../../service/echo.service";
 
 @Component({
     selector: 'home',
