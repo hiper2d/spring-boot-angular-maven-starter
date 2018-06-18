@@ -9,7 +9,7 @@ import org.springframework.security.web.authentication.HttpStatusEntryPoint
 
 @Configuration
 @EnableWebSecurity
-open class WebSecurityConfig: WebSecurityConfigurerAdapter() {
+class WebSecurityConfig: WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         http
