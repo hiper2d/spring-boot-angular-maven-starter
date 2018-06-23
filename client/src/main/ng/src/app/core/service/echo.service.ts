@@ -13,6 +13,6 @@ export class EchoService extends AbstractService {
   }
 
   echo(): Observable<string> {
-    return this.getText("/api/echo")
+    return this.text("/api/echo")
   }
 }

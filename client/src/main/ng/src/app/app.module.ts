@@ -1,22 +1,22 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "./app-routing.module";
-import {HomeModule} from "./layout/home/home.module";
+import {HomeModule} from "./feature/layout/home/home.module";
 import {AppComponent} from "./app.component";
-import {HttpClientModule} from "@angular/common/http";
-import {CoreModule} from "./core.module";
-import {LoginModule} from "./login/login.module";
-import {LayoutModule} from "./layout/layout.module";
+import {CoreModule} from "./core/core.module";
+import {LayoutModule} from "./feature/layout/layout.module";
+import {PageNotFoundComponent} from "./feature/page-not-found/page-not-found.component";
+import {LoginModule} from "./feature/login/login.module";
 
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     CoreModule,
     HomeModule,
-    HttpClientModule,
     LayoutModule,
     LoginModule,
     AppRoutingModule

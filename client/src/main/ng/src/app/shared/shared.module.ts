@@ -1,17 +1,17 @@
 import {CommonModule} from "@angular/common";
 import {NgModule} from "@angular/core";
-import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   declarations: [
-    PageNotFoundComponent
   ],
   exports: [
     CommonModule,
-    PageNotFoundComponent
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {

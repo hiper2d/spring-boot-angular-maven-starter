@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import "../assets/reset.css";
+import "../assets/reset.scss";
 
 @Component({
     selector: 'app-root',
