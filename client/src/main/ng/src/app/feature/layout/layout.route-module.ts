@@ -6,11 +6,11 @@ import {LayoutComponent} from './layout.component';
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent, canActivate: [AuthGuard],
+    path: '', component: LayoutComponent,
     children: [
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' }
+      { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthGuard] },
+      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule', canActivate: [AuthGuard] }
     ]
   }
 ];

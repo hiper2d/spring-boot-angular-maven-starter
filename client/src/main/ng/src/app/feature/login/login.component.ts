@@ -27,7 +27,7 @@ export class LoginComponent {
   login() {
     this.authService.authenticate(this.form.value).pipe(debounceTime(400)).subscribe(result => {
       if (result) {
-        this.router.navigate(['']);
+        this.router.navigate(['/']);
       } else {
         this.form.reset();
       }

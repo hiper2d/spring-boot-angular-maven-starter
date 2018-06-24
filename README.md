@@ -3,7 +3,9 @@ spring-boot-angular-maven-starter
 
 [![Kotlin](https://img.shields.io/badge/kotlin-1.2.x-blue.svg)](http://kotlinlang.org) [![TravisCI Build](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter.svg)](https://travis-ci.org/hiper2d/spring-boot-angular-maven-starter)
 
-An example of Spring Boot 2 and Angular 6 integration with the help of Kotlin, Maven and Yarn.
+An example of Spring Boot 2 and Angular 6 integration with the help of Maven, Yarn, Kotlin.
+
+Also includes `Spring Security Authentication` configured for a single page application client. The backend has no control over the frontend and only responds with 200/40x HTTP statuses. All login/logout redirects are performed on the client's side. Username and password are any Latin strings.
 
 ##### Client npm dependencies status:
 

@@ -11,8 +11,8 @@ import {map, tap} from 'rxjs/operators';
 })
 export class AuthService extends AbstractService {
 
-  // authenticated = false;
-  authenticated = true;
+  authenticated = false;
+  username: string;
 
   constructor(http: HttpClient) {
     super(http);
@@ -27,8 +27,18 @@ export class AuthService extends AbstractService {
   authenticate(credentials: Credentials): Observable<any> {
     const headers = new HttpHeaders(credentials ? AuthService.createToken(credentials) : {});
     return this.textWithHeaders(ApiConst.USER, headers).pipe(
+      tap(response => this.username = response),
       map<string, boolean>(response => !!response),
       tap(isAuthenticated => this.authenticated = isAuthenticated)
+    );
+  }
+
+  logout(): Observable<never> {
+    return this.post<any, never>(ApiConst.LOGOUT, null).pipe(
+      tap(_ => {
+        this.username = null;
+        this.authenticated = false;
+      })
     );
   }
 }
