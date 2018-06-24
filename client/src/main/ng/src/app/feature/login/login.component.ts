@@ -1,11 +1,11 @@
-import {Component} from "@angular/core";
-import {AuthService} from "../../core/service/auth.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {debounceTime} from "rxjs/operators";
-import {Router} from "@angular/router";
+import {Component} from '@angular/core';
+import {AuthService} from '../../core/service/auth.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {debounceTime} from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -21,7 +21,7 @@ export class LoginComponent {
     this.form = formBuilder.group({
       username: null,
       password: null
-    })
+    });
   }
 
   login() {
@@ -31,6 +31,6 @@ export class LoginComponent {
       } else {
         this.form.reset();
       }
-    })
+    });
   }
 }

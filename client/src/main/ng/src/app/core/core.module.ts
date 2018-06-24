@@ -1,6 +1,6 @@
-import {NgModule} from "@angular/core";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {AuthInterceptor} from "./interceptor/auth.interceptor";
+import {NgModule} from '@angular/core';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './interceptor/auth.interceptor';
 import {XhrInterceptor} from './interceptor/xhr.interceptor';
 
 const httpInterceptorProviders = [

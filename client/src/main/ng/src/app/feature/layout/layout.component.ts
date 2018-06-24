@@ -1,9 +1,9 @@
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
 import {AuthService} from '../../core/service/auth.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'layout',
+  selector: 'app-layout',
   templateUrl: './layout.component.html'
 })
 export class LayoutComponent {
@@ -15,7 +15,7 @@ export class LayoutComponent {
 
   logout() {
     this.authService.logout().subscribe(_ => {
-      this.router.navigate(['/'])
-    })
+      this.router.navigate(['/']);
+    });
   }
 }

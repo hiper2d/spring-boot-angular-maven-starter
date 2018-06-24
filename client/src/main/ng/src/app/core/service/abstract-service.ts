@@ -1,5 +1,5 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import {Observable} from "rxjs/internal/Observable";
+import {Observable} from 'rxjs/internal/Observable';
 
 export abstract class AbstractService {
 

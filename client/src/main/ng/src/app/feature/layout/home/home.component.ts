@@ -1,13 +1,10 @@
-import {Component, OnInit} from "@angular/core";
-import {EchoService} from "../../../core/service/echo.service";
+import {Component, OnInit} from '@angular/core';
+import {EchoService} from '../../../core/service/echo.service';
 import {AuthService} from '../../../core/service/auth.service';
 
 @Component({
-    selector: 'home',
-    template: `
-        <div>Hi, {{ username }}</div>
-        <div>Echo from server: {{echo}}</div>
-    `
+    selector: 'app-home',
+    templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
     echo = 'nope';
