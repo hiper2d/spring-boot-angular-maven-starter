@@ -26,9 +26,9 @@ export class AuthService extends AbstractService {
 
   authenticate(credentials: Credentials): Observable<any> {
     const headers = new HttpHeaders(credentials ? AuthService.createToken(credentials) : {});
-    return this.getWithHeaders(ApiConst.USER, headers).pipe(
-      map<any, boolean>(response => !!response['name']),
-      tap(response => this.authenticated = response)
+    return this.textWithHeaders(ApiConst.USER, headers).pipe(
+      map<string, boolean>(response => !!response),
+      tap(isAuthenticated => this.authenticated = isAuthenticated)
     );
   }
 }

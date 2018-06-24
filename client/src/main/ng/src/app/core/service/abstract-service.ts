@@ -5,8 +5,8 @@ export abstract class AbstractService {
 
   protected constructor(private http: HttpClient) {}
 
-  protected getWithHeaders(url: string, headers: HttpHeaders): Observable<any> {
-    return this.http.get(url, {headers: headers});
+  protected textWithHeaders(url: string, headers: HttpHeaders): Observable<any> {
+    return this.http.get(url, {headers: headers, responseType: 'text'});
   }
 
   protected text(url: string) {

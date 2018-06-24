@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {AbstractService} from "./abstract-service";
+import {ApiConst} from '../../util/api.const';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,6 @@ export class EchoService extends AbstractService {
   }
 
   echo(): Observable<string> {
-    return this.text("/api/echo")
+    return this.text(ApiConst.ECHO)
   }
 }
