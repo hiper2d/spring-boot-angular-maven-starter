@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {

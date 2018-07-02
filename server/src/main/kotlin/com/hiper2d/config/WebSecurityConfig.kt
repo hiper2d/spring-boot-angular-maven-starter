@@ -50,7 +50,7 @@ class WebSecurityConfig(
     override fun configure(web: WebSecurity) {
         // Everything below is necessary when running the application with compiled client as static resources
         web.ignoring()
-                .mvcMatchers("/index.html")
+                .mvcMatchers("/favicon.ico")
                 .mvcMatchers("/*.css")
                 .mvcMatchers("/*.js")
     }

@@ -24,6 +24,8 @@ export class AuthService extends AbstractService {
     };
   }
 
+  // Currently the user is not kept neither in Local Storage nor in Cookies.
+  // Thereby authorization information is erased after every page update.
   authenticate(credentials: Credentials): Observable<any> {
     const headers = new HttpHeaders(credentials ? AuthService.createToken(credentials) : {});
     return this.textWithHeaders(ApiConst.USER, headers).pipe(
